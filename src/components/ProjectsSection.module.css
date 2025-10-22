@@ -1,0 +1,131 @@
+/* ====== Paleta clara / aire amplio ====== */
+.section{
+  --bg:#F7F8F8; --fg:#0A0A0A; --muted:#6B6F77;
+  --surface:#FFFFFF; --surface-2:#FAFAFA; --border:rgba(10,10,10,.08);
+  --shadow-1:0 1px 2px rgba(0,0,0,.05); --shadow-2:0 12px 36px rgba(0,0,0,.08);
+  --accent:#F4D7C6; --accent-ink:#533B2E; --ring:rgba(0,0,0,.14);
+  color:var(--fg); background:var(--bg);
+  padding:clamp(60px,8vw,96px) 0;
+}
+
+/* Header general */
+.header{text-align:center;margin:0 0 clamp(24px,5vw,40px)}
+.badge{display:inline-flex;align-items:center;height:28px;padding:0 12px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.title{margin:12px 0 10px;font-weight:800;letter-spacing:.2px;font-size:clamp(24px,3.4vw,40px);line-height:1.15}
+.subtitle{color:var(--muted);max-width:70ch;margin:0 auto;font-size:clamp(14px,1.6vw,18px);line-height:1.7}
+
+/* Tabs */
+.tabs{margin:clamp(18px,3.5vw,26px) auto 0;display:flex;gap:10px;justify-content:center;padding:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:780px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{appearance:none;border:none;cursor:pointer;height:40px;padding:0 18px;border-radius:999px;background:var(--surface);color:var(--fg);border:1px solid var(--border);box-shadow:var(--shadow-1);font-weight:700;letter-spacing:.2px;white-space:nowrap;transition:transform .08s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .15s ease}
+.tab:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.tab:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+.active{background:var(--accent);border-color:rgba(0,0,0,.06);color:var(--accent-ink);box-shadow:0 10px 26px rgba(0,0,0,.07)}
+
+/* Panel */
+.panelWrap{margin-top:clamp(16px,3vw,22px);border:1px solid var(--border);border-radius:22px;background:var(--surface);box-shadow:var(--shadow-2);overflow:hidden}
+.panel{padding:clamp(28px,5vw,40px) clamp(22px,5vw,40px)}
+
+/* HERO */
+.heroGrid{display:grid;gap:clamp(20px,4.5vw,32px);align-items:center;grid-template-columns:1fr}
+.heroText{display:grid;gap:14px}
+.eyebrow{font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-size:12px}
+.h3XL{margin:2px 0 6px;font-weight:800;letter-spacing:.2px;font-size:clamp(28px,4.6vw,46px);line-height:1.06}
+.pLead{color:var(--fg);opacity:.95;line-height:1.75;font-size:clamp(15px,1.8vw,18px)}
+
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.2px;position:relative}
+.chip[data-tip]::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(-50%);white-space:nowrap;background:#111;color:#fff;padding:6px 8px;border-radius:8px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .15s ease}
+.chip:hover::after{opacity:.9}
+
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.stat{flex:0 0 auto;min-width:120px;background:var(--surface-2);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow-1);padding:12px 14px;display:grid;gap:2px;justify-items:start}
+.statNum{font-weight:800;font-size:clamp(20px,3.4vw,26px);line-height:1}
+.statLabel{color:var(--muted);font-weight:700;font-size:12px;letter-spacing:.2px}
+
+.mediaCard{border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface-2);box-shadow:0 8px 24px rgba(0,0,0,.06);position:relative}
+.mediaCard img{width:100%;height:auto;display:block}
+.figcap{position:absolute;right:10px;bottom:10px;background:rgba(255,255,255,.9);color:#0A0A0A;padding:4px 8px;border-radius:999px;font-weight:700;font-size:12px}
+
+/* CTAs */
+.ctaRow{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 16px;border-radius:12px;border:1px solid rgba(0,0,0,.08);background:var(--surface);color:var(--fg);font-weight:800;letter-spacing:.2px;box-shadow:var(--shadow-1);transition:transform .08s ease,background .2s ease,box-shadow .2s ease,border-color .2s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.08)}
+.btnPrimary{background:var(--accent);color:var(--accent-ink);border-color:rgba(0,0,0,.06);box-shadow:0 10px 26px rgba(0,0,0,.08)}
+.btnOutline{background:transparent;color:var(--fg);border-color:rgba(0,0,0,.14)}
+.linkGhost{display:inline-flex;align-items:center;font-weight:700;color:var(--muted)}
+.linkGhost:hover{color:var(--fg)}
+
+/* ====== Sección genérica con gran aire ====== */
+.sectionBlock{margin-top:clamp(30px,6vw,56px)}
+.sectionHeading{display:flex;align-items:flex-start;gap:12px;margin-bottom:clamp(14px,3vw,22px)}
+.sectionHeadingCenter{text-align:center;display:grid;justify-items:center;gap:8px;margin-bottom:clamp(16px,3.2vw,26px)}
+
+.headingIcon{width:34px;height:34px;border-radius:10px;background:#EEEFF0;display:grid;place-items:center;color:#3F444A}
+.headingIconLg{width:48px;height:48px;border-radius:14px;background:#EEEFF0;display:grid;place-items:center;color:#3F444A}
+
+.h2Section{margin:0;font-weight:800;letter-spacing:.2px;font-size:clamp(18px,2.4vw,24px)}
+.h2Desc{color:var(--muted);font-size:14px}
+.h2SectionCenter{margin:0;font-weight:800;font-size:clamp(20px,3vw,28px)}
+.h2DescCenter{color:var(--muted);max-width:68ch}
+
+/* Split */
+.split{display:grid;gap:clamp(18px,3.2vw,26px);grid-template-columns:1fr}
+.block{display:grid;gap:14px}
+.mediaFrame{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--surface-2);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.mediaFrame img{width:100%;height:auto;display:block}
+
+/* KV grid (datos del plan) */
+.kvGrid{display:grid;gap:12px}
+.kvItem{background:var(--surface-2);border:1px solid var(--border);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow-1)}
+.kvKey{color:var(--muted);font-weight:800;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.kvVal{font-weight:700}
+
+/* Amenidades vertical (ícono arriba, texto abajo) */
+.cardGridAlt{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.cardV{display:grid;justify-items:center;gap:10px;padding:16px;background:var(--surface-2);border:1px solid var(--border);box-shadow:var(--shadow-1)}
+.cardRound{border-radius:18px}
+.cardSharp{border-radius:10px}
+.cardVIcon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#EEEFF0;color:#3F444A}
+.cardVTitle{font-weight:800;text-align:center}
+
+/* Servicios con descripción */
+.cardGridSm{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.featureCard{display:flex;gap:12px;align-items:flex-start;background:var(--surface-2);border:1px solid var(--border);border-radius:16px;padding:14px;box-shadow:var(--shadow-1)}
+.cardIcon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#EEEFF0;color:#3F444A}
+.featureBody{display:grid;gap:4px}
+.cardTitle{font-weight:800}
+.cardText{color:var(--muted);line-height:1.5}
+
+/* Lotes */
+.lotWrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.lotChip{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--border);background:var(--surface-2);font-weight:700;color:#3F444A}
+
+/* Financiamiento + QR */
+.splitXL{display:grid;gap:clamp(18px,3.2vw,28px);grid-template-columns:1fr}
+.cardList{display:grid;gap:10px;margin-bottom:12px}
+.checkItem{display:flex;gap:10px;align-items:flex-start}
+.checkItem span{color:#7A715B;line-height:1.6}
+.btnWide{width:100%;margin-top:4px}
+
+.qrCardXL{display:grid;gap:10px;place-items:center;border:1px solid var(--border);border-radius:18px;padding:18px;background:var(--surface-2);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.qrCardXL img{width:220px;height:220px;object-fit:contain}
+.pSmall{color:var(--muted);font-size:13px}
+
+/* Responsivo */
+@media (min-width: 720px){
+  .panel{padding:clamp(34px,6vw,48px)}
+  .heroGrid{grid-template-columns:1.05fr .95fr}
+  .split{grid-template-columns:1fr 1fr}
+  .splitXL{grid-template-columns:1fr 1fr}
+  .kvGrid{grid-template-columns:1fr 1fr}
+}
+@media (min-width: 1200px){
+  .title{font-size:44px}
+}
+
+/* Reduce motion dentro del módulo */
+@media (prefers-reduced-motion: reduce){
+  .tab,.btn,.btnPrimary,.btnOutline,.linkGhost,.mediaCard,.mediaFrame,
+  .chip,.cardV,.featureCard,.lotChip,.stat,.kvItem { transition:none !important; animation:none !important; }
+}
