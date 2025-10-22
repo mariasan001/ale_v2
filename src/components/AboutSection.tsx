@@ -20,7 +20,7 @@ export default function AboutSection() {
           {/* Destacado tipo 'pill card' */}
           <div className={`${s.brandCard} ${s.brandFeatured}`} aria-hidden="true">
             <Image
-              src="/logos/everland.svg"  // coloca aquí tu archivo
+              src="/images/logo_everlan.png"  // coloca aquí tu archivo
               alt="Everland"
               width={116}
               height={28}
@@ -30,24 +30,14 @@ export default function AboutSection() {
           </div>
 
           {/* Resto de marcas (placeholders, cambia las rutas por tus archivos) */}
-          <div className={s.brandCard}>
-            <Image src="/logos/logo-1.svg" alt="Logo aliado 1" width={110} height={28} className={s.brandImg} />
-          </div>
-          <div className={s.brandCard}>
-            <Image src="/logos/logo-2.svg" alt="Logo aliado 2" width={100} height={28} className={s.brandImg} />
-          </div>
-          <div className={s.brandCard}>
-            <Image src="/logos/logo-3.svg" alt="Logo aliado 3" width={110} height={28} className={s.brandImg} />
-          </div>
-          <div className={s.brandCard}>
-            <Image src="/logos/logo-4.svg" alt="Logo aliado 4" width={120} height={28} className={s.brandImg} />
-          </div>
+       
+          
         </div>
 
         {/* Testimonio breve (opcional, visual) */}
         <figure className={s.testimonial}>
           <Image
-            src="/images/avatar-alexandra.jpg"  // tu foto; usa un placeholder si no la tienes
+            src="/images/perfil.png"  // tu foto; usa un placeholder si no la tienes
             alt="Alexandra, asesora"
             width={64}
             height={64}

@@ -1,4 +1,18 @@
 [
-  {"id":"dosha_enganche0","title":"Enganche 0% en Dosha","until":"2025-10-30","description":"Aprovecha enganche al 0% y planes de pago flexibles.","project":"Dosha"},
-  {"id":"gvdm_descuento","title":"Descuento lanzamiento en Gran Villa del Mar","until":"2025-11-15","description":"Bonificación especial por preventa.","project":"Gran Villa del Mar"}
+  {
+    "id": "oct-2025-yucatan-15-60",
+    "title": "15% + 60 MSI",
+    "description": "Terrenos residenciales en Yucatán • a 20 min de las Dunas de Chuburná.",
+    "until": "31 de Octubre 2025",
+    "image": "/images/yucatan-15-60.jpeg",
+    "location": "Yucatán"
+  },
+  {
+    "id": "oct-2025-gvdm-20-48",
+    "title": "20% de descuento • 48 meses sin intereses",
+    "description": "Gran Vía del Mar • Puerto Morelos • Uso Mixto Comercial.",
+    "until": "31 de Octubre 2025",
+    "image": "/images/gvdm-20-48.jpeg",
+    "location": "Puerto Morelos"
+  }
 ]
