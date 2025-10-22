@@ -4,9 +4,11 @@ import s from './ProjectsSection.module.css';
 
 import {
   Dog, Dumbbell, Bath, Library, Home, Flame, Baby, 
-  MonitorCheck, Waves, Trees, Drill, ShieldCheck, Star, Map as MapIcon, LayoutTemplate,
-  LucideYoutube,
-  Goal
+  MonitorCheck, Waves, Trees, Drill, ShieldCheck, Star, Map as MapIcon,
+  LayoutTemplate, Building2,
+  Goal,
+  FolderOpenDot,
+  BusIcon
 } from 'lucide-react';
 
 const waNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '527227978944';
@@ -15,7 +17,6 @@ const baseWaText =
   'Hola%20Alexandra,%20quiero%20informes%20de%20los%20terrenos.';
 
 type TabKey = 'dosia' | 'gvdm';
-
 const TABS: { key: TabKey; label: string }[] = [
   { key: 'dosia', label: 'Dosia' },
   { key: 'gvdm', label: 'Gran Villa del Mar' },
@@ -65,64 +66,42 @@ export default function ProjectsSection() {
   );
 }
 
-/* ---------- DOSIA PANEL ---------- */
+/* ---------- DOSIA (igual que tu versión refinada) ---------- */
 function DosiaPanel() {
   const project = 'Dosia';
   const waText = `${baseWaText}%20(%20Proyecto:%20${encodeURIComponent(project)}%20)`;
 
   return (
     <div id="panel-dosia" role="tabpanel" aria-labelledby="tab-dosia" className={s.panel}>
-      {/* HERO */}
       <div className={s.heroGrid}>
         <div className={s.heroText}>
           <span className={s.eyebrow}>Proyecto activo · Yucatán</span>
           <h3 className={s.h3XL}>Dosia — Inversión Natural</h3>
-
           <p className={s.pLead}>
             Desarrollado en la zona de mayor crecimiento de Yucatán. Urbanismo
             orgánico, áreas verdes y proyección de plusvalía. Ideal para pasear
             con mascotas o hacer caminatas largas; una apuesta sólida para
             quienes buscan descanso y futuro.
           </p>
-
           <div className={s.chips}>
             <span className={s.chip} data-tip="Estado">Yucatán</span>
             <span className={s.chip} data-tip="Contexto">Crecimiento inmobiliario</span>
             <span className={s.chip} data-tip="Entorno">Naturaleza endémica</span>
           </div>
-
           <div className={s.stats}>
-            <div className={s.stat}>
-              <span className={s.statNum}>220</span>
-              <span className={s.statLabel}>Lotes</span>
-            </div>
-            <div className={s.stat}>
-              <span className={s.statNum}>15+</span>
-              <span className={s.statLabel}>Amenidades</span>
-            </div>
-            <div className={s.stat}>
-              <span className={s.statNum}>~24 km</span>
-              <span className={s.statLabel}>De la costa</span>
-            </div>
+            <div className={s.stat}><span className={s.statNum}>220</span><span className={s.statLabel}>Lotes</span></div>
+            <div className={s.stat}><span className={s.statNum}>15+</span><span className={s.statLabel}>Amenidades</span></div>
+            <div className={s.stat}><span className={s.statNum}>~24 km</span><span className={s.statLabel}>De la costa</span></div>
           </div>
-
           <div className={s.ctaRow}>
-            <a
-              className={`${s.btn} ${s.btnPrimary}`}
-              target="_blank"
-              rel="noopener"
-              href={`https://wa.me/${waNumber}?text=${waText}`}
-              data-gtm="click_whatsapp_project"
-              data-project="dosia"
-            >
+            <a className={`${s.btn} ${s.btnPrimary}`} target="_blank" rel="noopener"
+               href={`https://wa.me/${waNumber}?text=${waText}`}
+               data-gtm="click_whatsapp_project" data-project="dosia">
               Saber más por WhatsApp
             </a>
-            <a className={s.linkGhost} href="#map" data-gtm="click_nav" data-section="map">
-              Ver ubicación
-            </a>
+            <a className={s.linkGhost} href="#map" data-gtm="click_nav" data-section="map">Ver ubicación</a>
           </div>
         </div>
-
         <div className={s.heroMedia}>
           <figure className={s.mediaCard}>
             <img src="/images/dosia/hero.png" alt="Dosia — vista conceptual" />
@@ -131,72 +110,45 @@ function DosiaPanel() {
         </div>
       </div>
 
-      {/* SECCIÓN: MASTER PLAN */}
+      {/* MASTER PLAN */}
       <div className={s.sectionBlock}>
         <div className={s.sectionHeading}>
           <div className={s.headingIcon}><LayoutTemplate size={18} strokeWidth={1.6} /></div>
           <div>
             <h4 className={s.h2Section}>Master Plan</h4>
-            <p className={s.h2Desc}>
-              Distribución del desarrollo, ejes verdes y amenidades principales.
-            </p>
+            <p className={s.h2Desc}>Distribución del desarrollo, ejes verdes y amenidades principales.</p>
           </div>
         </div>
-
         <div className={s.split}>
           <div className={s.block}>
-            <div className={s.mediaFrame}>
-              <img src="/images/dosia/masterplan.png" alt="Master plan de Dosia" />
-            </div>
+            <div className={s.mediaFrame}><img src="/images/dosia/masterplan.png" alt="Master plan de Dosia" /></div>
           </div>
-
           <div className={s.block}>
             <div className={s.kvGrid}>
-              <div className={s.kvItem}>
-                <div className={s.kvKey}>Ubicación</div>
-                <div className={s.kvVal}>Norponiente de Yucatán (~24 km de la costa)</div>
-              </div>
-              <div className={s.kvItem}>
-                <div className={s.kvKey}>Lotes</div>
-                <div className={s.kvVal}>220 · 250–600 m² (régimen condominal)</div>
-              </div>
-              <div className={s.kvItem}>
-                <div className={s.kvKey}>Concepto</div>
-                <div className={s.kvVal}>20,000 m² orgánicos y senderos interconectados</div>
-              </div>
-              <div className={s.kvItem}>
-                <div className={s.kvKey}>Amenidades</div>
-                <div className={s.kvVal}>15+ (ver detalle)</div>
-              </div>
+              <div className={s.kvItem}><div className={s.kvKey}>Ubicación</div><div className={s.kvVal}>Norponiente de Yucatán (~24 km de la costa)</div></div>
+              <div className={s.kvItem}><div className={s.kvKey}>Lotes</div><div className={s.kvVal}>220 · 250–600 m² (régimen condominal)</div></div>
+              <div className={s.kvItem}><div className={s.kvKey}>Concepto</div><div className={s.kvVal}>20,000 m² orgánicos y senderos interconectados</div></div>
+              <div className={s.kvItem}><div className={s.kvKey}>Amenidades</div><div className={s.kvVal}>15+ (ver detalle)</div></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* SECCIÓN: AMENIDADES */}
+      {/* AMENIDADES */}
       <div className={s.sectionBlock}>
         <div className={s.sectionHeadingCenter}>
           <div className={s.headingIconLg}><Home size={22} strokeWidth={1.6} /></div>
           <h4 className={s.h2SectionCenter}>Amenidades destacadas</h4>
-          <p className={s.h2DescCenter}>
-            Espacios pensados para disfrutar, convivir y conectar con la naturaleza.
-          </p>
+          <p className={s.h2DescCenter}>Espacios pensados para disfrutar, convivir y conectar con la naturaleza.</p>
         </div>
-
         <div className={s.cardGridAlt}>
           {[
-            { label: 'Parques infantiles', Icon: Baby },
-            { label: 'Pet park', Icon: Dog },
-            { label: 'Gimnasio exterior', Icon: Dumbbell },
-            { label: 'Gimnasio interior', Icon: MonitorCheck },
-            { label: 'Alberca', Icon: Waves },
-            { label: 'Ludoteca', Icon: Library },
-            { label: 'Casa club', Icon: Home },
-            { label: 'Terraza / Bar / Grill', Icon: Flame },
-            { label: 'Junior club', Icon: Baby },
-            { label: 'Área de yoga', Icon: LucideYoutube },
-            { label: 'Cancha de fútbol', Icon: Goal },
-            { label: 'Canchas de básquet', Icon: MonitorCheck },
+            { label: 'Parques infantiles', Icon: Baby }, { label: 'Pet park', Icon: Dog },
+            { label: 'Gimnasio exterior', Icon: Dumbbell }, { label: 'Gimnasio interior', Icon: MonitorCheck },
+            { label: 'Alberca', Icon: Waves }, { label: 'Ludoteca', Icon: Library },
+            { label: 'Casa club', Icon: Home }, { label: 'Terraza / Bar / Grill', Icon: Flame },
+            { label: 'Junior club', Icon: Baby }, { label: 'Área de yoga', Icon: Goal },
+            { label: 'Cancha de fútbol', Icon: FolderOpenDot }, { label: 'Canchas de básquet', Icon: MonitorCheck },
           ].map(({ label, Icon }, i) => (
             <div key={label} className={`${s.cardV} ${i % 2 ? s.cardSharp : s.cardRound}`}>
               <div className={s.cardVIcon}><Icon size={22} strokeWidth={1.6} /></div>
@@ -206,16 +158,13 @@ function DosiaPanel() {
         </div>
       </div>
 
-      {/* SECCIÓN: SERVICIOS URBANIZADOS */}
+      {/* SERVICIOS */}
       <div className={s.sectionBlock}>
         <div className={s.sectionHeadingCenter}>
           <div className={s.headingIconLg}><ShieldCheck size={22} strokeWidth={1.6} /></div>
           <h4 className={s.h2SectionCenter}>Servicios urbanizados</h4>
-          <p className={s.h2DescCenter}>
-            Infraestructura lista para construir y habitar con calidad y seguridad.
-          </p>
+          <p className={s.h2DescCenter}>Infraestructura lista para construir y habitar con calidad y seguridad.</p>
         </div>
-
         <div className={s.cardGridSm}>
           {[
             { label: 'Drenaje pluvial', Icon: Bath, text: 'Canalización y desfogue para lluvia.' },
@@ -237,96 +186,34 @@ function DosiaPanel() {
           ))}
         </div>
       </div>
-
-      {/* SECCIÓN: TIPOS DE LOTE */}
-      <div className={s.sectionBlock}>
-        <div className={s.sectionHeadingCenter}>
-          <div className={s.headingIconLg}><MapIcon size={22} strokeWidth={1.6} /></div>
-          <h4 className={s.h2SectionCenter}>Tipos de lote</h4>
-          <p className={s.h2DescCenter}>Opciones para distintas metas y ubicaciones dentro del plan maestro.</p>
-        </div>
-
-        <div className={s.lotWrap}>
-          {[
-            { label: 'Premium', Icon: Star },
-            { label: 'Esquina', Icon: Drill },
-            { label: 'Casa club', Icon: Home },
-            { label: 'Multifamiliar', Icon: Library },
-            { label: 'Mixto', Icon: MonitorCheck },
-            { label: 'Avenida', Icon: MonitorCheck },
-          ].map(({ label, Icon }) => (
-            <span key={label} className={s.lotChip}>
-              <Icon size={16} strokeWidth={1.6} />
-              {label}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* SECCIÓN: FINANCIAMIENTO + RECORRIDO */}
-      <div className={s.sectionBlock}>
-        <div className={s.splitXL}>
-          <div className={s.block}>
-            <div className={s.sectionHeading}>
-              <div className={s.headingIcon}><ShieldCheck size={18} strokeWidth={1.6} /></div>
-              <h4 className={s.h2Section}>Financiamiento</h4>
-            </div>
-
-            <div className={s.cardList}>
-              <div className={s.checkItem}><span>●</span> Planes hasta <strong>10 años</strong></div>
-              <div className={s.checkItem}><span>●</span> Descuentos por <strong>pronto pago</strong></div>
-              <div className={s.checkItem}><span>●</span> Propiedad <strong>privada</strong></div>
-              <div className={s.checkItem}><span>●</span> Sin revisión de buro</div>
-            </div>
-
-            <a
-              className={`${s.btn} ${s.btnPrimary} ${s.btnWide}`}
-              target="_blank"
-              rel="noopener"
-              href={`https://wa.me/${waNumber}?text=${baseWaText}%20(%20Proyecto:%20Dosia%20)`}
-              data-gtm="click_whatsapp_project"
-              data-project="dosia"
-            >
-              Quiero mi plan por WhatsApp
-            </a>
-          </div>
-
-          <div className={s.block}>
-            <div className={s.sectionHeading}>
-              <div className={s.headingIcon}><LayoutTemplate size={18} strokeWidth={1.6} /></div>
-              <h4 className={s.h2Section}>Recorrido virtual</h4>
-            </div>
-
-            <div className={s.qrCardXL}>
-              <img src="/images/dosia/qr.png" alt="QR del recorrido virtual de Dosia" />
-              <small className={s.pSmall}>Escanéalo para ver el recorrido</small>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }
 
-/* ---------- GRAN VILLA DEL MAR PANEL (ajustado al nuevo ritmo) ---------- */
+/* ---------- GRAN VILLA DEL MAR (nuevo diseño + sub-tabs) ---------- */
 function GvdmPanel() {
   const project = 'Gran Villa del Mar';
   const waText = `${baseWaText}%20(%20Proyecto:%20${encodeURIComponent(project)}%20)`;
 
+  type SubKey = 'formentera' | 'tenerife';
+  const [sub, setSub] = useState<SubKey>('formentera');
+
   return (
     <div id="panel-gvdm" role="tabpanel" aria-labelledby="tab-gvdm" className={s.panel}>
+      {/* HERO */}
       <div className={s.heroGrid}>
         <div className={s.heroText}>
           <span className={s.eyebrow}>Proyecto activo · Puerto Morelos</span>
-          <h3 className={s.h3XL}>Gran Villa del Mar — Puerto Morelos</h3>
+          <h3 className={s.h3XL}>Gran Villa del Mar</h3>
           <p className={s.pLead}>
-            Proyecto estratégico cerca del Caribe mexicano. Conecta con playa,
-            servicios y crecimiento turístico.
+            La primera comunidad planteada para Puerto Morelos basada en la integración de
+            privadas residenciales y una gran avenida comercial denominada <strong>Gran Villa del Mar</strong>,
+            en un entorno de gran riqueza natural dentro de la zona residencial del norte.
           </p>
           <div className={s.chips}>
             <span className={s.chip}>Puerto Morelos</span>
-            <span className={s.chip}>Crecimiento turístico</span>
-            <span className={s.chip}>Conexión a playa</span>
+            <span className={s.chip}>Avenida comercial</span>
+            <span className={s.chip}>Riqueza natural</span>
           </div>
           <div className={s.ctaRow}>
             <a
@@ -344,23 +231,238 @@ function GvdmPanel() {
 
         <div className={s.heroMedia}>
           <div className={s.mediaCard}>
-            <img src="/images/gvdm/hero.jpg" alt="Gran Villa del Mar — vista conceptual" />
+            <img src="/images/gvdm/hero.png" alt="Gran Villa del Mar — vista conceptual" />
           </div>
         </div>
       </div>
 
+      {/* NUESTRAS PRIVADAS */}
       <div className={s.sectionBlock}>
-        <div className={s.sectionHeading}>
-          <div className={s.headingIcon}><LayoutTemplate size={18} strokeWidth={1.6} /></div>
-          <div>
-            <h4 className={s.h2Section}>Master Plan</h4>
-            <p className={s.h2Desc}>Distribución y áreas clave del desarrollo.</p>
+        <div className={s.sectionHeadingCenter}>
+          <div className={s.headingIconLg}><Building2 size={22} strokeWidth={1.6} /></div>
+          <h4 className={s.h2SectionCenter}>Nuestras privadas</h4>
+          <p className={s.h2DescCenter}>Explora los conceptos de <strong>Formentera</strong> y <strong>Tenerife</strong>.</p>
+        </div>
+
+        {/* sub-tabs */}
+        <div className={s.subtabs} role="tablist" aria-label="Privadas">
+          <button
+            role="tab"
+            aria-selected={sub === 'formentera'}
+            className={`${s.subtab} ${sub === 'formentera' ? s.subActive : ''}`}
+            onClick={() => setSub('formentera')}
+          >
+            Formentera
+          </button>
+          <button
+            role="tab"
+            aria-selected={sub === 'tenerife'}
+            className={`${s.subtab} ${sub === 'tenerife' ? s.subActive : ''}`}
+            onClick={() => setSub('tenerife')}
+          >
+            Tenerife
+          </button>
+        </div>
+
+        {/* contenido por privada */}
+        {sub === 'formentera' ? <Formentera /> : <Tenerife />}
+      </div>
+
+      {/* FINANCIAMIENTO (global del proyecto) */}
+      <div className={s.sectionBlock}>
+        <div className={s.splitXL}>
+          <div className={s.block}>
+            <div className={s.sectionHeading}>
+              <div className={s.headingIcon}><ShieldCheck size={18} strokeWidth={1.6} /></div>
+              <h4 className={s.h2Section}>Financiamiento</h4>
+            </div>
+            <div className={s.cardList}>
+              
+              <div className={s.checkItem}><span>●</span> Financiamiento directo al desarrollador</div>
+              <div className={s.checkItem}><span>●</span> Financiamiento sin interés</div>
+              <div className={s.checkItem}><span>●</span> Sin revisión de buro</div>
+              <div className={s.checkItem}><span>●</span> Avalado por fideicomiso Banregio</div>
+            </div>
+            <a
+              className={`${s.btn} ${s.btnPrimary} ${s.btnWide}`}
+              target="_blank"
+              rel="noopener"
+              href={`https://wa.me/${waNumber}?text=${waText}`}
+              data-gtm="click_whatsapp_project"
+              data-project="gran-villa-del-mar"
+            >
+              Pídeme tu plan por WhatsApp
+            </a>
+          </div>
+
+          <div className={s.block}>
+            <div className={s.sectionHeading}>
+              <div className={s.headingIcon}><MapIcon size={18} strokeWidth={1.6} /></div>
+              <h4 className={s.h2Section}>Mapa de contexto</h4>
+            </div>
+            <div className={s.mediaFrame}>
+              <img src="/images/gvdm/context-map.png" alt="Mapa de contexto Gran Villa del Mar" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* --- Subcomponentes de privadas --- */
+function Formentera() {
+  return (
+    <div className={s.privateWrap}>
+      <div className={s.privateHero}>
+        <h5 className={s.privateTitle}>Formentera</h5>
+        <p className={s.privateDesc}>
+          Número limitado de terrenos (desde 400 m²). Privacidad, áreas verdes y amenidades de primera:
+          ideal para vivir con tranquilidad y estilo.
+        </p>
+      </div>
+
+      <div className={s.split}>
+        <div className={s.block}>
+          <div className={s.sectionHeading}>
+            <div className={s.headingIcon}><LayoutTemplate size={18} strokeWidth={1.6} /></div>
+            <h6 className={s.h3Section}>Distribución de lotes</h6>
+          </div>
+          <div className={s.mediaFrame}>
+            <img src="/images/gvdm/formentera-map.png" alt="Mapa de lotes — Formentera" />
           </div>
         </div>
 
-        <div className={s.mediaFrame}>
-          <img src="/images/gvdm/masterplan.jpg" alt="Master plan de Gran Villa del Mar" />
+        <div className={s.block}>
+          <div className={s.sectionHeading}>
+            <div className={s.headingIcon}><Home size={18} strokeWidth={1.6} /></div>
+            <h6 className={s.h3Section}>Amenidades</h6>
+          </div>
+          <div className={s.cardGridAlt}>
+            {[
+              { label: 'Acceso principal', Icon: ShieldCheck },
+              { label: 'Caseta de seguridad', Icon: ShieldCheck },
+              { label: 'Albercas', Icon: Waves },
+              { label: 'Casa club', Icon: Home },
+              { label: 'Gimnasio interior', Icon: MonitorCheck },
+              { label: 'Gimnasio exterior', Icon: Dumbbell },
+              { label: 'Parque infantil', Icon: Baby },
+              { label: 'Cowork con Wi-Fi', Icon: MonitorCheck },
+              { label: 'Canchas de uso múltiple', Icon: MonitorCheck },
+              { label: 'Pet park', Icon: Dog },
+              { label: 'Área de yoga', Icon:MapIcon },
+              { label: 'Free fit & Grill zone', Icon: Flame },
+              { label: 'Senderos', Icon: Trees },
+            ].map(({ label, Icon }, i) => (
+              <div key={label} className={`${s.cardV} ${i % 2 ? s.cardSharp : s.cardRound}`}>
+                <div className={s.cardVIcon}><Icon size={22} strokeWidth={1.6} /></div>
+                <div className={s.cardVTitle}>{label}</div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
+
+      <div className={s.sectionHeading}>
+        <div className={s.headingIcon}><ShieldCheck size={18} strokeWidth={1.6} /></div>
+        <h6 className={s.h3Section}>Servicios urbanizados</h6>
+      </div>
+      <div className={s.cardGridSm}>
+        {[
+          { label: 'Drenaje pluvial y sanitario', Icon: Bath, text: 'Sistema de desalojo para lluvia y sanitario.' },
+          { label: 'Red eléctrica a pie de lote', Icon: Drill, text: 'Acometidas y muretes de medición.' },
+          { label: 'Alumbrado público', Icon: MonitorCheck, text: 'Iluminación vial y peatonal.' },
+          { label: 'Suministro de agua', Icon: Waves, text: 'Toma a pie de lote.' },
+          { label: 'Calles y avenidas pavimentadas', Icon: MonitorCheck, text: 'Vialidades principales y secundarias.' },
+          { label: 'Barda perimetral', Icon: ShieldCheck, text: 'Delimitación y seguridad.' },
+          { label: 'Banquetas y vegetación', Icon: Trees, text: 'Andadores y especies nativas.' },
+        ].map(({ label, Icon, text }) => (
+          <div key={label} className={s.featureCard}>
+            <div className={s.cardIcon}><Icon size={18} strokeWidth={1.6} /></div>
+            <div className={s.featureBody}>
+              <div className={s.cardTitle}>{label}</div>
+              <div className={s.cardText}>{text}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Tenerife() {
+  return (
+    <div className={s.privateWrap}>
+      <div className={s.privateHero}>
+        <h5 className={s.privateTitle}>Tenerife</h5>
+        <p className={s.privateDesc}>
+          Lotes desde 252 m² para un estilo de vida dinámico y conectado, con acceso a diversas amenidades.
+        </p>
+      </div>
+
+      <div className={s.split}>
+        <div className={s.block}>
+          <div className={s.sectionHeading}>
+            <div className={s.headingIcon}><LayoutTemplate size={18} strokeWidth={1.6} /></div>
+            <h6 className={s.h3Section}>Distribución de lotes</h6>
+          </div>
+          <div className={s.mediaFrame}>
+            <img src="/images/gvdm/tenerife-map.png" alt="Mapa de lotes — Tenerife" />
+          </div>
+        </div>
+
+        <div className={s.block}>
+          <div className={s.sectionHeading}>
+            <div className={s.headingIcon}><Home size={18} strokeWidth={1.6} /></div>
+            <h6 className={s.h3Section}>Amenidades</h6>
+          </div>
+          <div className={s.cardGridAlt}>
+            {[
+              { label: 'Acceso principal', Icon: ShieldCheck },
+              { label: 'Caseta de seguridad', Icon: ShieldCheck },
+              { label: 'Albercas', Icon: Waves },
+              { label: 'Casa club', Icon: Home },
+              { label: 'Gimnasio interior', Icon: MonitorCheck },
+              { label: 'Gimnasio exterior', Icon: Dumbbell },
+              { label: 'Parque infantil', Icon: Baby },
+              { label: 'Cowork con Wi-Fi', Icon: MonitorCheck },
+              { label: 'Canchas de uso múltiple', Icon: MonitorCheck },
+              { label: 'Pet park', Icon: Dog },
+              { label: 'Área de yoga', Icon: BusIcon },
+              { label: 'Free fit & Grill zone', Icon: Flame },
+              { label: 'Senderos', Icon: Trees },
+            ].map(({ label, Icon }, i) => (
+              <div key={label} className={`${s.cardV} ${i % 2 ? s.cardSharp : s.cardRound}`}>
+                <div className={s.cardVIcon}><Icon size={22} strokeWidth={1.6} /></div>
+                <div className={s.cardVTitle}>{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className={s.sectionHeading}>
+        <div className={s.headingIcon}><ShieldCheck size={18} strokeWidth={1.6} /></div>
+        <h6 className={s.h3Section}>Servicios urbanizados</h6>
+      </div>
+      <div className={s.cardGridSm}>
+        {[
+          { label: 'Drenaje pluvial y sanitario', Icon: Bath, text: 'Sistema de desalojo para lluvia y sanitario.' },
+          { label: 'Red eléctrica a pie de lote', Icon: Drill, text: 'Acometidas y muretes de medición.' },
+          { label: 'Alumbrado público', Icon: MonitorCheck, text: 'Iluminación vial y peatonal.' },
+          { label: 'Suministro de agua', Icon: Waves, text: 'Toma a pie de lote.' },
+          { label: 'Calles y avenidas pavimentadas', Icon: MonitorCheck, text: 'Vialidades principales y secundarias.' },
+          { label: 'Barda perimetral', Icon: ShieldCheck, text: 'Delimitación y seguridad.' },
+          { label: 'Banquetas y vegetación', Icon: Trees, text: 'Andadores y especies nativas.' },
+        ].map(({ label, Icon, text }) => (
+          <div key={label} className={s.featureCard}>
+            <div className={s.cardIcon}><Icon size={18} strokeWidth={1.6} /></div>
+            <div className={s.featureBody}>
+              <div className={s.cardTitle}>{label}</div>
+              <div className={s.cardText}>{text}</div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
