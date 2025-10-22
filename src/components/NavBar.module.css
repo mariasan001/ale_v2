@@ -1,0 +1,157 @@
+/* Scope del componente (CSS Modules-safe) */
+.nav {
+  /* tokens locales */
+  --h: 72px;
+  --radius: 999px;
+  --gap: 14px;
+  --padX: clamp(12px, 3vw, 28px);
+  --text: #0a0a0a;
+  --muted: #6b7280;
+  --pill-bg: #ffffff;
+  --cta: #0b0b0b;
+  --shadow: 0 10px 30px rgba(4, 6, 8, .08);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+  backdrop-filter: blur(8px) saturate(130%);
+  border-bottom: 1px solid rgba(15,15,15,.06);
+}
+
+.inner {
+  height: var(--h);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--padX);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: .2px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+/* ---------- Menú “pill” ---------- */
+.links {
+  justify-self: end;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: var(--gap);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--pill-bg);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15,15,15,.06);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  position: relative;
+  transition: transform .15s ease, color .2s ease, background-color .2s ease;
+  outline: none;
+}
+.link:hover { transform: translateY(-1px); color: #111; }
+.link:focus-visible { box-shadow: 0 0 0 3px rgba(17,17,17,.12); }
+
+/* Último link como CTA oscuro (mismo href que ya tienes) */
+.cta {
+  background: var(--cta);
+  color: #fff;
+  padding-inline: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+.cta:hover { transform: translateY(-1px); }
+.cta:focus-visible { box-shadow: 0 0 0 3px rgba(0,0,0,.25); }
+
+/* ---------- Mobile: hamburger + dropdown ---------- */
+.toggle { display: none; }
+
+/* Botón burger */
+.burger {
+  display: none;              /* visible solo en mobile */
+  justify-self: end;
+  width: 44px; height: 44px;
+  border-radius: 999px;
+  background: var(--pill-bg);
+  border: 1px solid rgba(15,15,15,.08);
+  box-shadow: var(--shadow);
+  position: relative;
+  cursor: pointer;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  background: #111;
+  transform: translateX(-50%);
+  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+}
+.burger::before { top: 16px; }
+.burger::after  { top: 26px; }
+/* línea central “fantasma” */
+.burger:has(+ .links)::marker { content: none; }
+
+/* Estado abierto (checkbox checked) */
+.toggle:checked + .burger::before {
+  top: 21px; transform: translateX(-50%) rotate(45deg);
+}
+.toggle:checked + .burger::after  {
+  top: 21px; transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Dropdown */
+@media (max-width: 960px) {
+  .inner { grid-template-columns: 1fr auto; }
+
+  .burger { display: grid; place-items: center; }
+
+  .links {
+    position: absolute;
+    left: 12px; right: 12px;
+    top: calc(var(--h) - 12px);
+    display: grid;
+    grid-auto-flow: row;
+    gap: 6px;
+    padding: 10px;
+    border-radius: 18px;
+    transform-origin: top center;
+    transform: scaleY(0.96);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  /* cuando el checkbox está activo, mostramos el menú */
+  .toggle:checked ~ .links {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: auto;
+  }
+
+  .link { padding: 12px; }
+  .cta { justify-self: stretch; text-align: center; }
+}
+
+/* Micro-ajustes XS */
+@media (max-width: 420px) {
+  .brand { font-size: 15px; }
+}
+
+/* A11y reducido (scoped y “puro”) */
+@media (prefers-reduced-motion: reduce) {
+  .nav, .nav * { transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "name":"Dosha",
+    "slug":"dosha-yucatan",
+    "location":"Yucatán · Cerca de Mérida",
+    "description":"Privada residencial con amenidades y servicios urbanizados. Ideal para inversión y patrimonio.",
+    "amenities":["Parque infantil","Áreas verdes","Acceso controlado","Zona de recreación"],
+    "hasVirtualTour": true,
+    "virtualTourUrl":"https://example.com/recorrido-3d-dosha",
+    "mapImage":"/images/maps/dosha-map.png",
+    "promoTag":"Enganche 0% este mes"
+  },
+  {
+    "name":"Gran Villa del Mar",
+    "slug":"gran-villa-del-mar",
+    "location":"Puerto Morelos · Quintana Roo",
+    "description":"Desarrollo cerca del mar con lotes planeados y amenidades.",
+    "amenities":["Casa club","Áreas verdes","Ciclovía"],
+    "hasVirtualTour": false,
+    "virtualTourUrl":"",
+    "mapImage":"/images/maps/gvdm-map.png",
+    "promoTag":"Descuento por lanzamiento"
+  }
+]
